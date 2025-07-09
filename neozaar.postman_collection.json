@@ -1,0 +1,859 @@
+{
+	"info": {
+		"_postman_id": "f1c895a5-9f3b-4105-8cbc-d102463cec04",
+		"name": "neozaar_db",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37743722",
+		"_collection_link": "https://neozaar-9151.postman.co/workspace/neozaar-Workspace~0642e747-e31d-4804-8139-70d9189a5b76/collection/37743722-f1c895a5-9f3b-4105-8cbc-d102463cec04?action=share&source=collection_link&creator=37743722"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "auth",
+					"item": [
+						{
+							"name": "Single_login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"partner10.neo@example.com\",\r\n  \"password\": \"Partner@123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "isv|partner login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"isvi@example.com\",\r\n  \"password\": \"Test@123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/isv/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"isv",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"admin10@example.com\",\r\n  \"password\": \"StrongAdminPassword123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/admin/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"admin",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "forget password",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"saurabhbisht741380@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/forget-password",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"forget-password"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "send otp",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"saurabhbisht741380@gmail.com\",\r\n  \"type\": \"reset\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/send-otp",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"send-otp"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "verify email",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"saurabhbisht741380@gmail.com\",\r\n  \"otp\": \"372193\",     // Replace with the actual OTP sent to your email\r\n  \"type\": \"reset\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/verify-email",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"verify-email"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "reset password",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"password\": \"NewPass@123\",\r\n  \"confirm_password\": \"NewPass@123\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/reset-password?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InNhdXJhYmhiaXNodDc0MTM4MEBnbWFpbC5jb20iLCJ0eXBlIjoicGFzc3dvcmRfcmVzZXQiLCJpYXQiOjE3NTEyOTUzNDUsImV4cCI6MTc1MTI5ODk0NX0.AMsfcq7aDDNafOlXtOKT5p13ExEeZldkU4HTpfyJ67Y",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"reset-password"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InNhdXJhYmhiaXNodDc0MTM4MEBnbWFpbC5jb20iLCJ0eXBlIjoicGFzc3dvcmRfcmVzZXQiLCJpYXQiOjE3NTEyOTUzNDUsImV4cCI6MTc1MTI5ODk0NX0.AMsfcq7aDDNafOlXtOKT5p13ExEeZldkU4HTpfyJ67Y"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get_token_user",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzUxODcxODcyLCJleHAiOjE3NTE5NTgyNzJ9.bYanW2Zg37dEKRYCdXATqIL60SOFu5bmsjWQaaPbHNk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"isv@example.com\",\r\n  \"password\": \"ISV@123\"\r\n}\r\n"
+								},
+								"url": {
+									"raw": "{{base_url}}/api/get_token-user",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"get_token-user"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Neo Partner\",\r\n  \"email\": \"partner1011.neo@example.com\",\r\n  \"mobile\": \"9876543210\",\r\n  \"password\": \"Partner@123\",\r\n  \"role_id\": 4,\r\n  \"profile_details\": {\r\n    \"name\": \"Neo Solutions\",\r\n    \"business_email\": \"biz@neo.com\",\r\n    \"company_name\": \"Neo Enterprise\",\r\n    \"website\": \"https://neo.com\",\r\n    \"role\": \"CEO\",\r\n    \"partner_type\": [\"Reseller\", \"Support\"],  // <- ARRAY\r\n    \"region\": \"South Asia\",\r\n    \"pincode\": \"560001\",\r\n    \"city\": \"Bangalore\",\r\n    \"expertise\": [\"Cloud\", \"DevOps\"],         // <- ARRAY\r\n    \"interests\": [\"GTM\", \"Integration\"],      // <- ARRAY\r\n    \"notes\": \"Long-term partner focused on AI and automation.\"\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/user/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjEsImlhdCI6MTc1MjAzNTA1NiwiZXhwIjoxNzUyMTIxNDU2fQ.zDzgkHjteP3C5EfYtSnjII-8zOO9JPuuwVSWnG9bA9g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Neo Partner\",\r\n  \"profile_details\": {\r\n    \"name\": \"Neo Solutions\",\r\n    \"business_email\": \"biz@neo.com\",\r\n    \"company_name\": \"Neo Enterprise\",\r\n    \"website\": \"https://neo.com\",\r\n    \"role\": \"CEO\",\r\n    \"partner_type\": [\"Reseller\", \"Support\"],  // <- ARRAY\r\n    \"region\": \"South Asia\",\r\n    \"pincode\": \"560001\",\r\n    \"city\": \"Bangalore\",\r\n    \"expertise\": [\"Cloud\", \"DevOps\"],         // <- ARRAY\r\n    \"interests\": [\"GTM\", \"Integration\"],      // <- ARRAY\r\n    \"notes\": \"Long-term partner focused on AI and automation.\"\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/user/update/21",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"update",
+								"21"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzUxMzcwMTU3LCJleHAiOjE3NTE0NTY1NTd9.bFdmXvSlLvVTDWsO2No4HnkIzd6oJKh2m4yPgk_9Jf4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Saurabh Bisht\",\r\n  \"email\": \"saurabhbisht741380@gmail.com\",\r\n  \"password\": \"Test@123\",\r\n  \"mobile\": \"9876543210\",\r\n  \"role_type\": \"CLIENT\",\r\n  \"role_id\": 1,\r\n  \"role_data\": {\r\n    \"gst\": \"29ABCDE1234F1Z5\",\r\n    \"company_name\": \"NeoZaar\",\r\n    \"business_email\": \"dev@neozaar.com\"\r\n  }\r\n}\r\n"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/user/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/user/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "enquiries",
+			"item": [
+				{
+					"name": "create enquiries",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImlhdCI6MTc1MTQ1Mzg4MiwiZXhwIjoxNzUxNTQwMjgyfQ.pwQJZXeerO1F3TSzBn7g5kPUhQ-34pSIlnvNFG_U4zo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"user_id\": 3,\r\n  \"product_id\": 3,\r\n  \"enquiry_type\": \"emoo\",\r\n  \"status\": \"pending\",\r\n  \"remarks\": \"Interested in a live demo session\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/enquiries/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"enquiries",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update enquiries",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzUxMjk0NTY1LCJleHAiOjE3NTEzODA5NjV9.1ejwVXVDZYJ7PTxwcW0LELQa1sHxs76TiZBwYglLcvk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"user_id\": 1,\r\n  \"product_id\": 2,\r\n  \"enquiry_type\": \"demo\",\r\n  \"status\": \"open\",\r\n  \"remarks\": \"Interested in a live demo session\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/enquiries/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"enquiries",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all enquiries",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzUxMjk0NTY1LCJleHAiOjE3NTEzODA5NjV9.1ejwVXVDZYJ7PTxwcW0LELQa1sHxs76TiZBwYglLcvk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/enquiries",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"enquiries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get enquirie by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzUxMjk0NTY1LCJleHAiOjE3NTEzODA5NjV9.1ejwVXVDZYJ7PTxwcW0LELQa1sHxs76TiZBwYglLcvk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/enquiries/user/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"enquiries",
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "get products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzUxMjk0NTY1LCJleHAiOjE3NTEzODA5NjV9.1ejwVXVDZYJ7PTxwcW0LELQa1sHxs76TiZBwYglLcvk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/products?type=product&page=1&limit=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"products"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "product"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get products by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzUxMjk0NTY1LCJleHAiOjE3NTEzODA5NjV9.1ejwVXVDZYJ7PTxwcW0LELQa1sHxs76TiZBwYglLcvk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/products/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzUxMjk0NTY1LCJleHAiOjE3NTEzODA5NjV9.1ejwVXVDZYJ7PTxwcW0LELQa1sHxs76TiZBwYglLcvk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "action_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "action_type",
+									"value": "product",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "NeoZaar CRM",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Feature-rich CRM platform.",
+									"type": "text"
+								},
+								{
+									"key": "starting_price",
+									"value": "2999",
+									"type": "text"
+								},
+								{
+									"key": "license_type",
+									"value": "monthly",
+									"type": "text"
+								},
+								{
+									"key": "demo_available",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "demo_person_email",
+									"value": "demo@neozaar.com",
+									"type": "text"
+								},
+								{
+									"key": "launch_url",
+									"value": "https://neozaar.com/launch",
+									"type": "text"
+								},
+								{
+									"key": "image_url",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "brand",
+									"value": "NeoZaar",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "saas",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "active",
+									"type": "text"
+								},
+								{
+									"key": "is_publish",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "taxonomy_data",
+									"value": "{\"region\":\"IN\",\"industry\":\"IT\"}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/products/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"products",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzUxMjk0NTY1LCJleHAiOjE3NTEzODA5NjV9.1ejwVXVDZYJ7PTxwcW0LELQa1sHxs76TiZBwYglLcvk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "action_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "action_type",
+									"value": "product",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "NeoZaar C",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Feature-rich CRM platform.",
+									"type": "text"
+								},
+								{
+									"key": "starting_price",
+									"value": "2999",
+									"type": "text"
+								},
+								{
+									"key": "license_type",
+									"value": "monthly",
+									"type": "text"
+								},
+								{
+									"key": "demo_available",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "demo_person_email",
+									"value": "demo@neozaar.com",
+									"type": "text"
+								},
+								{
+									"key": "launch_url",
+									"value": "https://neozaar.com/launch",
+									"type": "text"
+								},
+								{
+									"key": "image_url",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "brand",
+									"value": "NeoZaar",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "saas",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "active",
+									"type": "text"
+								},
+								{
+									"key": "is_publish",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "taxonomy_data",
+									"value": "{\"region\":\"IN\",\"industry\":\"IT\"}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/products/update/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"products",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
